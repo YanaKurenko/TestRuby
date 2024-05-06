@@ -1,0 +1,20 @@
+<h1><%= @author.fname %> <%= @author.lname %></h1>
+<p><%= @author.email %></p>
+
+<ul>
+     <li><%= link_to "Edit", edit_author_path(@author) %></li>
+
+<li><%= link_to "Destroy", author_path(@author), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+
+<h2>Articles:</h2>
+<ul>
+  <% @author.articles.each do |article| %>
+    <li>
+      <%= link_to article.title, article_path(article) %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,30 @@
+<%= form_with model: @author do |form| %>
+  <div>
+    <%= form.label :First_name %><br>
+    <%= form.text_field :fname %>
+    <% @author.errors.full_messages_for(:fname).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :Last_name %><br>
+    <%= form.text_field :lname %>
+    <% @author.errors.full_messages_for(:lname).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :Email %><br>
+    <%= form.text_field :email %>
+    <% @author.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+

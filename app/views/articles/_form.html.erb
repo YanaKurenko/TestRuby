@@ -1,4 +1,6 @@
 <%= form_with model: article do |form| %>
+
+
   <div>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
@@ -8,12 +10,6 @@
   </div>
 
   <div>
-  <%= form.label :status %><br>
-  <%= form.select :status, Visible::VALID_STATUSES, selected: article.status || 'public' %>
-</div>
-
-
-  <div>
     <%= form.label :body %><br>
     <%= form.text_area :body %><br>
     <% article.errors.full_messages_for(:body).each do |message| %>
@@ -21,6 +17,15 @@
     <% end %>
   </div>
 
+  <div>
+    <%= form.label :author_id, "Author" %><br>
+    <%= form.collection_select :author_id, @authors, :id, :fname, {prompt: "Select author"} %>
+  </div>
+
+  <div>
+  <%= form.label :status %><br>
+  <%= form.select :status, Visible::VALID_STATUSES, selected: article.status || 'public' %>
+</div>
   <div>
     <%= form.submit %>
   </div>
