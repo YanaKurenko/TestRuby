@@ -27,6 +27,8 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    @authors = Author.all
+    @authors = nil if @article.author_id.nil?
   end
 
   def update

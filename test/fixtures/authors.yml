@@ -1,11 +1,10 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  fname: MyString
-  lname: MyString
-  email: MyString
+  fname: "Helena"
+  lname: "Fix"
+  email: "helena.fix@example.com"
 
 two:
-  fname: MyString
-  lname: MyString
-  email: MyString
+  fname: "Jane"
+  lname: "Shmidt"
+  email: "jane.shmidt@example.com"

@@ -18,9 +18,14 @@
   </div>
 
   <div>
-    <%= form.label :author_id, "Author" %><br>
-    <%= form.collection_select :author_id, @authors, :id, :fname, {prompt: "Select author"} %>
-  </div>
+  <%= form.label :author_id, "Author" %><br>
+  <% if @authors && !@authors.empty? %>
+    <%= form.collection_select :author_id, @authors, :id, :fname, { prompt: "Select author" } %>
+  <% else %>
+    <%= form.select :author_id, Author.pluck(:fname, :id), { prompt: "Select author else" } %>
+  <% end %>
+</div>
+
 
   <div>
   <%= form.label :status %><br>
